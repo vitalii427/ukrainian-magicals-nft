@@ -29,7 +29,7 @@ use near_sdk::{
     env, near_bindgen, require, AccountId, BorshStorageKey, PanicOnDefault, Promise, PromiseOrValue,
 };
 
-use crate::icon::DATA_IMAGE_PNG_NEAR_ICON;
+use crate::icon::DATA_IMAGE_JPEG_NEAR_ICON;
 
 #[near_bindgen]
 #[derive(BorshDeserialize, BorshSerialize, PanicOnDefault)]
@@ -59,7 +59,7 @@ impl Contract {
             spec: NFT_METADATA_SPEC.to_owned(),
             name: "Ukrainian Magicals".to_owned(),
             symbol: "UAMAG".to_owned(),
-            icon: Some(DATA_IMAGE_PNG_NEAR_ICON.to_owned()),
+            icon: Some(DATA_IMAGE_JPEG_NEAR_ICON.to_owned()),
             base_uri: Some(ARWEAVE_GATEWAY_BASE_URL.to_owned()),
             reference: None,
             reference_hash: None,
