@@ -1,0 +1,11 @@
+[package]
+name = "ukrainian-magicals-nft"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+near-sdk = "4.0.0-pre.8"
+near-contract-standards = "4.0.0-pre.8"
