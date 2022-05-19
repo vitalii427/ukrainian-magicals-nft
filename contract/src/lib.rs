@@ -59,7 +59,6 @@ impl Contract {
             spec: NFT_METADATA_SPEC.to_owned(),
             name: "Ukrainian Magicals".to_owned(),
             symbol: "UAMAG".to_owned(),
-
             icon: Some(DATA_IMAGE_PNG_NEAR_ICON.to_owned()),
             base_uri: Some(ARWEAVE_GATEWAY_BASE_URL.to_owned()),
             reference: None,
