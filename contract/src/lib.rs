@@ -60,7 +60,6 @@ impl Contract {
             reference: None,
             reference_hash: None,
         };
-        metadata.assert_valid();
         let contract = Self {
             tokens: NonFungibleToken::new(
                 StorageKey::NonFungibleToken,
