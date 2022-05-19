@@ -1,0 +1,2 @@
+# ukrainian-magicals-nft
+NFT
