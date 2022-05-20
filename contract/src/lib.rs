@@ -26,7 +26,7 @@ use near_contract_standards::non_fungible_token::{Token, TokenId};
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use near_sdk::collections::LazyOption;
 use near_sdk::{
-    env, near_bindgen, require, AccountId, BorshStorageKey, PanicOnDefault, Promise, PromiseOrValue,
+    env, near_bindgen, AccountId, BorshStorageKey, PanicOnDefault, Promise, PromiseOrValue,
 };
 
 use crate::icon::DATA_IMAGE_WEBP_NEAR_ICON;
@@ -48,19 +48,23 @@ enum StorageKey {
 }
 
 const ARWEAVE_GATEWAY_BASE_URL: &str = "https://arweave.net/";
+const NFT_NAME: &str = "Ukrainian Magicals";
+const NFT_SYMBOL: &str = "UAMAG";
+const NFT_DESCRIPTION: &str = "Ukrainian Magicals - unique NFT collection created by Ukrainian augmented reality team called Magicals within the framework of Hackathon «For Ukraine» by NEAR UA";
+
+// TODO: add sale & royalties
 
 #[near_bindgen]
 impl Contract {
     /// Initializes the contract owned by the caller with predefined metadata
     #[init]
     pub fn new() -> Self {
-        require!(!env::state_exists(), "Already initialized");
         let metadata = NFTContractMetadata {
-            spec: NFT_METADATA_SPEC.to_owned(),
-            name: "Ukrainian Magicals".to_owned(),
-            symbol: "UAMAG".to_owned(),
-            icon: Some(DATA_IMAGE_WEBP_NEAR_ICON.to_owned()),
-            base_uri: Some(ARWEAVE_GATEWAY_BASE_URL.to_owned()),
+            spec: NFT_METADATA_SPEC.into(),
+            name: NFT_NAME.into(),
+            symbol: NFT_SYMBOL.into(),
+            icon: Some(DATA_IMAGE_WEBP_NEAR_ICON.into()),
+            base_uri: Some(ARWEAVE_GATEWAY_BASE_URL.into()),
             reference: None,
             reference_hash: None,
         };
@@ -80,60 +84,61 @@ impl Contract {
     /// Mint 3 predefined tokens for contract owner as an initial tokens owner
     pub fn nft_mint_all(&mut self) {
         let initial_storage = env::storage_usage();
+        let issued_at = format!("{}", env::block_timestamp() / 1_000_000_000u64);
         let token_ids = &["0", "1", "2"];
         self.tokens.internal_mint_with_refund(
-            token_ids[0].to_owned(),
+            token_ids[0].into(),
             self.tokens.owner_id.clone(),
             Some(TokenMetadata {
                 title: Some("#0 Mariupol".into()),
-                description: None,
-                media: None,
+                description: Some(NFT_DESCRIPTION.into()),
+                media: Some("Cqe2tJCF-yygmxci0RsESa62zQNqPV9oZVDeallYI7o".into()),
                 media_hash: None,
                 copies: Some(1u64),
-                issued_at: None,
+                issued_at: Some(issued_at.clone()),
                 expires_at: None,
                 starts_at: None,
                 updated_at: None,
                 extra: None,
-                reference: None,
+                reference: Some("Akb7UGDwSbcYka0-frMk5T-YTJQurXzdD0ZBnSqyBRQ".into()),
                 reference_hash: None,
             }),
             None,
         );
         self.tokens.internal_mint_with_refund(
-            token_ids[1].to_owned(),
+            token_ids[1].into(),
             self.tokens.owner_id.clone(),
             Some(TokenMetadata {
                 title: Some("#1 Kharkiv".into()),
-                description: None,
-                media: None,
+                description: Some(NFT_DESCRIPTION.into()),
+                media: Some("g2kMZ1OhktT0X8R1OzAbdpIk81Dr28uLdyJPlO5YvlM".into()),
                 media_hash: None,
                 copies: Some(1u64),
-                issued_at: None,
+                issued_at: Some(issued_at.clone()),
                 expires_at: None,
                 starts_at: None,
                 updated_at: None,
                 extra: None,
-                reference: None,
+                reference: Some("65nN_FOLcxCmm5dEPDQi_pQBTu6hxSslvFiepNE02F4".into()),
                 reference_hash: None,
             }),
             None,
         );
         self.tokens.internal_mint_with_refund(
-            token_ids[2].to_owned(),
+            token_ids[2].into(),
             self.tokens.owner_id.clone(),
             Some(TokenMetadata {
                 title: Some("#2 Mykolaiv".into()),
-                description: None,
-                media: None,
+                description: Some(NFT_DESCRIPTION.into()),
+                media: Some("Cqe2tJCF-yygmxci0RsESa62zQNqPV9oZVDeallYI7o".into()),
                 media_hash: None,
                 copies: Some(1u64),
-                issued_at: None,
+                issued_at: Some(issued_at),
                 expires_at: None,
                 starts_at: None,
                 updated_at: None,
                 extra: None,
-                reference: None,
+                reference: Some("U8zVK7opopOesv9trJihrwIcZl7tAQcil0sbetfSJ4U".into()),
                 reference_hash: None,
             }),
             None,
@@ -171,7 +176,7 @@ mod tests {
     use super::*;
 
     const MINT_STORAGE_COST: u128 = 5870000000000000000000;
-    const MINT_ALL_STORAGE_COST: u128 = 15460000000000000000000;
+    const MINT_ALL_STORAGE_COST: u128 = 21310000000000000000000;
 
     impl Contract {
         /// Mint a new token with ID=`token_id` belonging to `token_owner_id`.
