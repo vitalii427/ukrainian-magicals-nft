@@ -82,6 +82,7 @@ impl Contract {
     }
 
     /// Mint 3 predefined tokens for contract owner as an initial tokens owner
+    #[payable]
     pub fn nft_mint_all(&mut self) {
         let initial_storage = env::storage_usage();
         let issued_at = format!("{}", env::block_timestamp() / 1_000_000_000u64);
