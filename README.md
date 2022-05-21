@@ -1,7 +1,7 @@
 # Ukrainian Magicals NFT
 https://ukrainianmagicals.com/
 
-Ukrainian Magicals - unique NFT collection created by Ukrainian augmented reality team called Magicals within the framework of Hackathon «For Ukraine» by NEAR UA
+Ukrainian Magicals - unique NFT collection created by Ukrainian augmented reality team called Magicals within the framework of [Hackathon «For Ukraine» by NEAR UA](https://eventornado.com/event/near-hackathon-for-ukraine#home)
 
 <pre><b>- The Best Pitch Nomination 🤩
 - Outstanding Innovation Nomination 🦾
