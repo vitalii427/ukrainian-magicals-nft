@@ -9,6 +9,4 @@ Ukrainian Magicals - unique NFT collection created by Ukrainian augmented realit
 
 Based on [non-fungible-token example](https://github.com/near/near-sdk-rs/tree/master/examples/non-fungible-token) from near_sdk_rs
 
-<img src="https://ukrainianmagicals.com/wp-content/uploads/2022/05/1.webp" alt="NFT #0 Mariupol" style="width:200px;"/>
-<img src="https://ukrainianmagicals.com/wp-content/uploads/2022/05/2.webp" alt="NFT #2 Kharkiv" style="width:200px;"/>
-<img src="https://ukrainianmagicals.com/wp-content/uploads/2022/05/3.webp" alt="NFT #2 Mykolaiv" style="width:200px;"/>
+<img src="https://ukrainianmagicals.com/wp-content/uploads/2022/05/1.webp" alt="NFT #0 Mariupol" style="width:200px;"/><img src="https://ukrainianmagicals.com/wp-content/uploads/2022/05/2.webp" alt="NFT #2 Kharkiv" style="width:200px;"/><img src="https://ukrainianmagicals.com/wp-content/uploads/2022/05/3.webp" alt="NFT #2 Mykolaiv" style="width:200px;"/>
