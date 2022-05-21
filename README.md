@@ -1,11 +1,11 @@
 # Ukrainian Magicals NFT
 https://ukrainianmagicals.com/
 
+Ukrainian Magicals - unique NFT collection created by Ukrainian augmented reality team called Magicals within the framework of Hackathon «For Ukraine» by NEAR UA
+
 <pre><b>- The Best Pitch Nomination 🤩
 - Outstanding Innovation Nomination 🦾
-- 2-nd place at Hackathon «For Ukraine» by NEAR UA by jury vote 🔥</b></pre>
-
-Ukrainian Magicals - unique NFT collection created by Ukrainian augmented reality team called Magicals within the framework of Hackathon «For Ukraine» by NEAR UA
+- 2-nd place at the Hackathon by jury vote 🔥</b></pre>
 
 Based on [non-fungible-token example](https://github.com/near/near-sdk-rs/tree/master/examples/non-fungible-token) from near_sdk_rs
 
